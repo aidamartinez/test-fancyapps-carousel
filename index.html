@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancyapps - Carousel</title>
+  </head>
+  <body>
+    <div id="app" class="mt-20 mb-32">
+		<h1 class="text-5xl text-center mb-14">Fancyapps - Carousel</h1>
+
+		<section class="container mx-auto mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Basic slider</h2>
+
+				<div class="f-carousel" id="basicCarousel">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-200">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-400">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-600">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-800">4</div>
+				</div>
+				<h2 class="section-title">Basic slider (infinite)</h2>
+
+				<div class="f-carousel" id="basicCarouselInfinite">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-200">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-400">2</div>
+				</div>
+
+				<h2 class="section-title">Basic slider (autoplay)</h2>
+
+				<style>
+					.f-carousel--autoplay {
+						--f-progress-color: #00f7ff;
+					}
+				</style>
+				<div class="f-carousel f-carousel--autoplay" id="basicCarouselAutoplay">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-200">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-400">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-600">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-800">4</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="container mx-auto mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Responsive slider with spacing (CSS)</h2>
+				<div><small>Use of CSS variables for quick/small changes (spacing, width...)</small></div>
+
+				<style>
+					.f-carousel--responsive {
+						--f-carousel-spacing: 8px;
+						--f-carousel-slide-width: calc((100% - 16px) / 3);
+						--f-carousel-dot-opacity: 0.2;
+						--f-carousel-dot-color: #d81570;
+
+
+						--f-button-width: 38px;
+						--f-button-height: 38px;
+
+						--f-button-svg-width: 16px;
+						--f-button-svg-height: 16px;
+						--f-button-svg-stroke-width: 2.5;
+
+						--f-button-color: rgb(71 85 105);
+						--f-button-border-radius: 50%;
+						--f-button-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%), 0 3px 7px -3px rgb(0 0
+								0 / 30%);
+
+						--f-button-bg: #fff;
+						--f-button-hover-bg: #f9f9f9;
+						--f-button-active-bg: #f0f0f0;
+					}
+					@media (max-width: 767px) {
+						.f-carousel--responsive {
+							--f-carousel-slide-width: 100%;
+						}
+					}
+				</style>
+
+				<div class="f-carousel f-carousel--responsive" id="responsiveCarousel">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-200">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-400">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-600">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-800">4</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="container mx-auto mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Slider with options (JS)</h2>
+
+				<style>
+					.f-carousel--options {
+						--f-button-bg: #cccccc;
+						--f-button-width: 48px;
+						--f-button-height: 48px;
+						--f-button-border-radius: 50%;
+					}
+				</style>
+				<div class="f-carousel f-carousel--options" id="optionsCarousel">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-200">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-400">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-600">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-800">4</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="container mx-auto mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Slider only on mobile</h2>
+				<div><small>No need for reload to change</small></div>
+
+				<div class="f-carousel f-carousel--mobile md:grid md:grid-cols-4 md:gap-2" id="mobileCarousel">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-200">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-400">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-600">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-teal-800">4</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="mb-16">
+			<div class="w-full mx-auto">
+				<h2 class="section-title">Overflow with lazy loading</h2>
+
+				<style>
+					#overflowCarousel {
+						--f-carousel-slide-width: 100%;
+						--f-carousel-spacing: 0;
+						--f-carousel-slide-padding: 0 1rem;
+
+						--f-button-prev-pos: 2rem;
+						--f-button-next-pos: 2rem;
+
+						--f-button-bg: #fff;
+						--f-button-color: #333;
+
+						--f-button-width: 48px;
+						--f-button-height: 48px;
+						--f-button-border-radius: 50%;
+
+						--f-button-svg-width: 27px;
+						--f-button-svg-height: 27px;
+						--f-button-svg-stroke-width: 1.5;
+
+						--f-button-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+							rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+							rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+					}
+
+					@media screen and (min-width: 640px) {
+						#overflowCarousel {
+							--f-carousel-slide-width: calc(100% / 2);
+						}
+					}
+				</style>
+				<div class="">
+					<div id="overflowCarousel" class="mb-8 py-10 f-carousel bg-gray-50">
+					  <div class="f-carousel__viewport px-12">
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1681934540198-f9036fec8917?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1604883781245-0aca44fff711?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+							<img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							/>
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1615493749624-7a97d4b18fe6?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1508175800969-525c72a047dd?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+					  </div>
+					</div>
+				  </div>
+			</div>
+		</section>
+		<section class="mb-16">
+			<div class="w-full mx-auto">
+				<h2 class="section-title">Overflow on the right side</h2>
+
+				<style>
+					#overflowRightCarousel {
+						--f-carousel-slide-width: 100%;
+						--f-carousel-spacing: 0;
+						--f-carousel-slide-padding: 0 1rem;
+
+						--f-button-prev-pos: 2rem;
+						--f-button-next-pos: 2rem;
+
+						--f-button-bg: #fff;
+						--f-button-color: #333;
+
+						--f-button-width: 48px;
+						--f-button-height: 48px;
+						--f-button-border-radius: 50%;
+
+						--f-button-svg-width: 27px;
+						--f-button-svg-height: 27px;
+						--f-button-svg-stroke-width: 1.5;
+
+						--f-button-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+							rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+							rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+					}
+
+					@media screen and (min-width: 640px) {
+						#overflowRightCarousel {
+							--f-carousel-slide-width: calc(100% / 2);
+						}
+					}
+				</style>
+				<div class="">
+					<div id="overflowRightCarousel" class="mb-8 py-10 f-carousel bg-gray-50">
+					  <div class="f-carousel__viewport pr-32">
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1681934540198-f9036fec8917?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1604883781245-0aca44fff711?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+							<img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1616097970275-1e187b4ce59f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							/>
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1615493749624-7a97d4b18fe6?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1508175800969-525c72a047dd?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+						<figure class="f-carousel__slide">
+						  <img
+							class="mb-4 w-full h-full object-cover rounded-lg"
+							alt=""
+							width="300"
+							height="400"
+							data-lazy-src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						  />
+						</figure>
+					  </div>
+					</div>
+				  </div>
+			</div>
+		</section>
+
+		<section class="container mx-14 mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Two synced sliders</h2>
+
+				<style>
+					.f-carousel__slide.is-nav-selected {
+					  color: #fff;
+					  background: #7fcbe9;
+					}
+			  
+					#slide1 {
+					  --f-carousel-slide-width: 100%;
+					  --f-carousel-spacing: 10px;
+					}			  
+					#slide2 {
+					  --f-carousel-slide-width: 100px;
+					  --f-carousel-spacing: 5px;
+					}
+				</style>
+				<div class="f-carousel" id="slide1">
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">4</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">5</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">6</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">7</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">8</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">9</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-40 bg-slate-300">10</div>
+				</div>
+			
+				<div class="f-carousel mt-2" id="slide2">
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">1</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">2</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">3</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">4</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">5</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">6</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">7</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">8</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">9</div>
+					<div class="f-carousel__slide flex justify-center items-center !h-10 bg-slate-400 cursor-pointer">10</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="container mx-14 mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Thumbnails (classic)</h2>
+
+				<div class="f-carousel" id="thumbnailsCarousel">
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/31/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/31/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/35/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/35/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/34/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/34/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/60/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/60/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/33/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/33/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/59/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/59/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/37/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/37/640x480"
+						   />
+					</div>
+				  </div>
+			</div>
+		</section>
+
+		<section class="container mx-14 mb-16">
+			<div class="w-7/12 mx-auto">
+				<h2 class="section-title">Thumbnails (modern)</h2>
+
+				<div class="f-carousel" id="thumbnailsModernCarousel">
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/31/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/31/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/35/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/35/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/34/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/34/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/60/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/60/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/33/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/33/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/59/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/59/640x480"
+						   />
+					</div>
+					<div
+						 class="f-carousel__slide"
+						 data-thumb-src="https://lipsum.app/id/37/192x144"
+						 >
+					  <img
+					  	   class="w-full h-full object-cover"
+						   width="640"
+						   height="480"
+						   alt=""
+						   data-lazy-src="https://lipsum.app/id/37/640x480"
+						   />
+					</div>
+				  </div>
+			</div>
+		</section>
+	</div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

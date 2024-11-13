@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section-title{
+	@apply text-3xl text-center mb-7;
+}
+
+img{
+	@apply max-w-full;
+}
+
+.fancybox-protected {
+	background-image: url("https://fancyapps.com/img/watermark.png");
+	background-size: cover;
+}
+
+.button{
+	@apply border border-teal-800 bg-teal-600 text-white py-2 px-5 rounded-md hover:bg-teal-400 transition-all duration-500;
+}
+
+.button-block{
+	@apply mx-auto block w-fit;
+}
